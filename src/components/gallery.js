@@ -5,27 +5,129 @@ class Gallery extends React.Component {
     return (
       <section id="gallery">
         <p className="gallery-title text-center">GALLERY</p>
-        <div className="row wrapper">
-          <div className="col-md-4 col-xs-12">
-            <div className="thumbnail">
-              <img alt="berlin" className="img-responsive logo" src="images/berlin.jpg"/>
-            </div>
-            <div className="caption">
-              <div className="row">
-                <div className="col-xs-10">
-                  <div className="row">
-                    <p className="img-title">The Berlin Street</p>
+        <div className="container">
+          <div className="row wrapper">
+            <a href="#">
+              <div className="col-md-4 col-xs-12">
+                <div className="photo-col">
+                  <div className="photo">
+                    <img alt="berlin" className="img-responsive logo" src="images/berlin.jpg"/>
+                    <p className="price">$20</p>
                   </div>
-                  <div className="row">
-                    <p className="owner">By Jake Newton</p>
+                  <div className="caption">
+                    <div className="row">
+                      <div className="col-xs-6">
+                        <p className="img-title">The Berlin Street</p>
+                      </div>
+                      <div className="col-xs-6 text-right">
+                        <p className="owner">By Jake Newton</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className="col-xs-2 text-right">
-                  $20
+              </div>  
+            </a>
+            <a href="#">
+              <div className="col-md-4 col-xs-12">
+                <div className="photo-col">
+                  <div className="photo">
+                    <img alt="berlin" className="img-responsive logo" src="images/berlin.jpg"/>
+                    <p className="price">$20</p>
+                  </div>
+                  <div className="caption">
+                    <div className="row">
+                      <div className="col-xs-6">
+                        <p className="img-title">The Berlin Street</p>
+                      </div>
+                      <div className="col-xs-6 text-right">
+                        <p className="owner">By Jake Newton</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>  
+              </div>  
+            </a>
+            <a href="#">
+              <div className="col-md-4 col-xs-12">
+                <div className="photo-col">
+                  <div className="photo">
+                    <img alt="berlin" className="img-responsive logo" src="images/berlin.jpg"/>
+                    <p className="price">$20</p>
+                  </div>
+                  <div className="caption">
+                    <div className="row">
+                      <div className="col-xs-6">
+                        <p className="img-title">The Berlin Street</p>
+                      </div>
+                      <div className="col-xs-6 text-right">
+                        <p className="owner">By Jake Newton</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>  
+            </a>
+            <a href="#">
+              <div className="col-md-4 col-xs-12">
+                <div className="photo-col">
+                  <div className="photo">
+                    <img alt="berlin" className="img-responsive logo" src="images/berlin.jpg"/>
+                    <p className="price">$20</p>
+                  </div>
+                  <div className="caption">
+                    <div className="row">
+                      <div className="col-xs-6">
+                        <p className="img-title">The Berlin Street</p>
+                      </div>
+                      <div className="col-xs-6 text-right">
+                        <p className="owner">By Jake Newton</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>  
+            </a>
+            <a href="#">
+              <div className="col-md-4 col-xs-12">
+                <div className="photo-col">
+                  <div className="photo">
+                    <img alt="berlin" className="img-responsive logo" src="images/berlin.jpg"/>
+                    <p className="price">$20</p>
+                  </div>
+                  <div className="caption">
+                    <div className="row">
+                      <div className="col-xs-6">
+                        <p className="img-title">The Berlin Street</p>
+                      </div>
+                      <div className="col-xs-6 text-right">
+                        <p className="owner">By Jake Newton</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>  
+            </a>
+            <a href="#">
+              <div className="col-md-4 col-xs-12">
+                <div className="photo-col">
+                  <div className="photo">
+                    <img alt="berlin" className="img-responsive logo" src="images/berlin.jpg"/>
+                    <p className="price">$20</p>
+                  </div>
+                  <div className="caption">
+                    <div className="row">
+                      <div className="col-xs-6">
+                        <p className="img-title">The Berlin Street</p>
+                      </div>
+                      <div className="col-xs-6 text-right">
+                        <p className="owner">By Jake Newton</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>  
+            </a>
+          </div>
         </div>
       </section>
     )

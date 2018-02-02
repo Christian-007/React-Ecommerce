@@ -5,6 +5,10 @@ body, html {
   height: 100%;
 }
 
+.has-error .form-control {
+  border-color: #a94442 !important;
+}
+
 /* Navbar styling */
 .navbar {
   background-color: #f5f5f5;

@@ -2,9 +2,13 @@ import React from 'react';
 import FontAwesome from 'react-fontawesome';
 import SignupForm from './signupForm';
 import LoginForm from './loginForm';
+import { connect } from 'react-redux';
+import { userSignupRequest } from '../actions/signupActions';
+import PropTypes from 'prop-types';
 
 class LoginModal extends React.Component {
   render() {
+    const { userSignupRequest } = this.props;
     return (
       <div id="loginModal" className="modal fade" tabIndex="-1" role="dialog">
         <button type="button" className="close" data-dismiss="modal" aria-label="Close"><FontAwesome name='times' /></button>
@@ -22,7 +26,9 @@ class LoginModal extends React.Component {
               <div className="tab-content text-center">
                 <div role="tabpanel" className="tab-pane active" id="signupTab">
                   <p><FontAwesome name='user-circle-o' /> SIGN UP</p>
-                  <SignupForm/>
+                  <SignupForm
+                    userSignupRequest={userSignupRequest}
+                  />
                 </div>
                 <div role="tabpanel" className="tab-pane" id="loginTab">
                   <p><FontAwesome name='envelope-o' /> LOGIN USING EMAIL ADDRESS</p>
@@ -37,4 +43,8 @@ class LoginModal extends React.Component {
   }
 }
 
-export default LoginModal;
+LoginModal.propTypes = {
+  userSignupRequest: PropTypes.func.isRequired
+}
+
+export default connect(null, { userSignupRequest })(LoginModal);

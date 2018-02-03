@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import FontAwesome from 'react-fontawesome';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -42,6 +43,13 @@ class SignupForm extends React.Component {
 
     return (
       <form id="signupForm" onSubmit={this.onSubmit}>
+        {errors.email, errors.confirmPass &&
+          <div className="well error">
+            <p>
+              <FontAwesome name='exclamation-triangle' /> The email is incorrect or password does not match. Please try again.
+            </p>
+          </div>
+        }
 
         <div className={classnames("form-group", { 'has-error': errors.fname }) }>
           <input
@@ -52,8 +60,8 @@ class SignupForm extends React.Component {
             value={this.state.fname}
             className="form-control"
             placeholder="First Name"
+            required
           />
-          {errors.fname && <span className="help-block">{errors.fname}</span>}
         </div>
 
         <div className={classnames("form-group", { 'has-error': errors.lname }) }>
@@ -65,8 +73,8 @@ class SignupForm extends React.Component {
             value={this.state.lname}
             className="form-control"
             placeholder="Last Name"
+            required
           />
-          {errors.lname && <span className="help-block">{errors.lname}</span>}
         </div>
 
         <div className={classnames("form-group", { 'has-error': errors.email }) }>
@@ -78,8 +86,8 @@ class SignupForm extends React.Component {
             value={this.state.email}
             className="form-control"
             placeholder="Email Address"
+            required
           />
-          {errors.email && <span className="help-block">{errors.email}</span>}
         </div>
 
         <div className={classnames("form-group", { 'has-error': errors.password }) }>
@@ -91,8 +99,8 @@ class SignupForm extends React.Component {
             value={this.state.password}
             className="form-control"
             placeholder="Password"
+            required
           />
-          {errors.password && <span className="help-block">{errors.password}</span>}
         </div>
 
         <div className={classnames("form-group", { 'has-error': errors.confirmPass }) }>
@@ -104,8 +112,8 @@ class SignupForm extends React.Component {
             value={this.state.confirmPass}
             className="form-control"
             placeholder="Confirm Password"
+            required
           />
-          {errors.confirmPass && <span className="help-block">{errors.confirmPass}</span>}
         </div>
 
         <div className="form-group">

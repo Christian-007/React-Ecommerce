@@ -6,7 +6,7 @@ body, html {
 }
 
 .has-error .form-control {
-  border-color: #a94442 !important;
+  border-color: #FF4747 !important;
 }
 
 /* Navbar styling */
@@ -103,6 +103,17 @@ body, html {
 
       #signupForm, #loginForm {
         padding: 10px 30px;
+
+        .well {
+          background-color: #FF4747;
+          color: #fff;
+          padding: 12px;
+
+          p {
+            font-size: 13px;
+            margin: 0;
+          }
+        }
 
         input {
           border-radius: 25px;

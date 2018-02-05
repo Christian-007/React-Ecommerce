@@ -24,9 +24,9 @@ export class Navbar extends React.Component {
                   <li>
                     <Link className="nav-link" to="/">HOME</Link>
                   </li>
-                  <li>
+                  {/*<li>
                     <Link className="nav-link" to="/about">GALLERY</Link>
-                  </li>
+                  </li>*/}
                   <li>
                     <a className="nav-link" href="#" data-toggle="modal" data-target="#loginModal">LOGIN</a>
                   </li>

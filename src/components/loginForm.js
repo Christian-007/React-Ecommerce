@@ -28,8 +28,7 @@ class LoginForm extends React.Component {
     this.setState({ errors: {}, hasError: false, isLoading: true }); // clears any previous errors
     this.props.userLoginRequest(this.state)
     .then(() => {
-      console.log("No error!");
-      this.setState({ hasError: false, isLoading: false }); // clears any previous errors
+      window.location.reload();
     })
     .catch((error) => {
       this.setState({ errors: error.response.data, isLoading: false, hasError: true });

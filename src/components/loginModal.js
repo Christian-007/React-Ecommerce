@@ -60,7 +60,7 @@ class LoginModal extends React.Component {
                   </div>
                   <div role="tabpanel" className={classnames("tab-pane", {"active": this.props.clickedLink==="login"}) } id="loginTab">
                     <p><FontAwesome name='envelope-o' /> LOGIN USING EMAIL ADDRESS</p>
-                    <LoginForm userLoginRequest={userLoginRequest}/>
+                    <LoginForm userLoginRequest={userLoginRequest} />
                   </div>
                 </div>
               </div>

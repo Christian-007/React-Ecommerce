@@ -5,11 +5,12 @@ import LoginForm from './loginForm';
 import classnames from 'classnames';
 import { connect } from 'react-redux';
 import { userSignupRequest } from '../actions/signupActions';
+import { userLoginRequest } from '../actions/loginActions';
 import PropTypes from 'prop-types';
 
 class LoginModal extends React.Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
       isRegistered: false
     }
@@ -30,7 +31,7 @@ class LoginModal extends React.Component {
   }
 
   render() {
-    const { userSignupRequest } = this.props;
+    const { userSignupRequest, userLoginRequest } = this.props;
     return (
       <div>
         <div className={classnames("alert", "alert-success", "alert-dismissible", { "isShown": this.state.isRegistered }) } role="alert">
@@ -42,25 +43,24 @@ class LoginModal extends React.Component {
           <div className="modal-dialog" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                {/*<button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>*/}
                 <ul className="nav nav-tabs" role="tablist">
-                  <li role="presentation" className="active"><a className="signupLink" href="#signupTab" aria-controls="signupTab" role="tab" data-toggle="tab">SIGN UP</a></li>
-                  <li role="presentation"><a className="loginLink" href="#loginTab" aria-controls="loginTab" role="tab" data-toggle="tab">LOGIN</a></li>
+                  <li role="presentation" className={ classnames({"active": this.props.clickedLink==="signup"}) }><a className="signupLink" href="#signupTab" aria-controls="signupTab" role="tab" data-toggle="tab">SIGN UP</a></li>
+                  <li role="presentation" className={ classnames({"active": this.props.clickedLink==="login"}) }><a className="loginLink" href="#loginTab" aria-controls="loginTab" role="tab" data-toggle="tab">LOGIN</a></li>
                   
                 </ul>
               </div>
               <div className="modal-body">
                 <div className="tab-content text-center">
-                  <div role="tabpanel" className="tab-pane active" id="signupTab">
+                  <div role="tabpanel" className={classnames("tab-pane", {"active": this.props.clickedLink==="signup"}) } id="signupTab">
                     <p><FontAwesome name='user-circle-o' /> SIGN UP</p>
                     <SignupForm
                       userSignupRequest={userSignupRequest}
                       onSignup={this.onSignup}
                     />
                   </div>
-                  <div role="tabpanel" className="tab-pane" id="loginTab">
+                  <div role="tabpanel" className={classnames("tab-pane", {"active": this.props.clickedLink==="login"}) } id="loginTab">
                     <p><FontAwesome name='envelope-o' /> LOGIN USING EMAIL ADDRESS</p>
-                    <LoginForm/>
+                    <LoginForm userLoginRequest={userLoginRequest}/>
                   </div>
                 </div>
               </div>
@@ -73,7 +73,8 @@ class LoginModal extends React.Component {
 }
 
 LoginModal.propTypes = {
-  userSignupRequest: PropTypes.func.isRequired
+  userSignupRequest: PropTypes.func.isRequired,
+  userLoginRequest: PropTypes.func.isRequired
 }
 
-export default connect(null, { userSignupRequest })(LoginModal);
+export default connect(null, { userSignupRequest, userLoginRequest })(LoginModal);

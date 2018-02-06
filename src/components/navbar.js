@@ -4,6 +4,13 @@ import FontAwesome from 'react-fontawesome';
 import LoginModal from './loginModal';
 
 export class Navbar extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      linkClicked: ""
+    }
+  }
+
   render() {
     return (
       <div>
@@ -24,18 +31,18 @@ export class Navbar extends React.Component {
                   <li>
                     <Link className="nav-link" to="/">HOME</Link>
                   </li>
-                  {/*<li>
-                    <Link className="nav-link" to="/about">GALLERY</Link>
-                  </li>*/}
                   <li>
-                    <a className="nav-link" href="#" data-toggle="modal" data-target="#loginModal">LOGIN</a>
+                    <a className="nav-link" onClick={() => this.setState({linkClicked: "signup"})} href="#" data-toggle="modal" data-target="#loginModal">SIGN UP</a>
+                  </li>
+                  <li>
+                    <a className="nav-link" onClick={() => this.setState({linkClicked: "login"})} href="#" data-toggle="modal" data-target="#loginModal">LOGIN</a>
                   </li>
                 </ul>
               </div>
             </div>
           </nav>
         </Router>
-        <LoginModal/>
+        <LoginModal clickedLink={this.state.linkClicked}/>
       </div>
     )
   }

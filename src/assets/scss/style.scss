@@ -61,7 +61,7 @@ body, html {
   background-color: #232323 !important;
 }
 
-#loginModal {
+#loginModal, #uploadModal {
   .close {
     color: #fff;
     opacity: 1;
@@ -157,6 +157,66 @@ body, html {
           letter-spacing: 1.5px;
         }
       }
+    }
+  }
+}
+
+#uploadModal {
+
+  .modal-body {
+    padding: 0;
+
+    p {
+      margin: 10px;
+      font-weight: 400 !important;
+    }
+
+    .form-group {
+      padding: 10px 20%;
+    }
+
+    button {
+      font-size: 14px;
+      letter-spacing: 1.5px;
+      color: #fff;
+      width: 100%;
+    }
+
+    .file {
+      font-size: 10px;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      background-color: #fff;
+      color: #000;
+      cursor: pointer;
+      border: 1px dashed #929292;
+      padding: 20px 40px;
+
+      [hidden] {
+        display: none !important;
+      }
+
+    }
+    
+    input.form-control  {
+      border: 0;
+      border-bottom: 1px solid #ccc;
+      font-weight: 300;
+      box-shadow: none;
+      border-radius: 0;
+    }
+    
+
+    .btn-cols {
+      padding: 0 20px 20px;
+    }
+
+    .upload-btn {
+      background-color: $blueColor;
+    }
+
+    .cancel-btn {
+      background-color: #e61610;
     }
   }
 }

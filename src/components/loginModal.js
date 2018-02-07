@@ -38,6 +38,7 @@ class LoginModal extends React.Component {
           <button type="button" className="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <strong>Success!</strong> You have successfully signed up an account!
         </div>
+        
         <div id="loginModal" className="modal fade" tabIndex="-1" role="dialog">
           <button type="button" className="close" data-dismiss="modal" aria-label="Close"><FontAwesome name='times' /></button>
           <div className="modal-dialog" role="document">

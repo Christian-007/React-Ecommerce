@@ -37,6 +37,7 @@ class UploadForm extends React.Component {
     const formData = new FormData();
     formData.append('photo_name', this.state.photo_name);
     formData.append('file', this.state.file);
+    formData.append('fullName', user.fname + ' ' + user.lname);
     formData.append('user_id', user.id);
     formData.append('errors', this.state.errors);
     const config = {

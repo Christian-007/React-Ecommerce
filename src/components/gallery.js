@@ -37,7 +37,7 @@ class Gallery extends React.Component {
             {uploads.map((upload, index) => (
                // <span className='indent' key={index} />
                <a href="#" key={index}>
-                <div className="col-md-4 col-xs-12">
+                <div className="col-md-6 col-xs-12">
                   <div className="photo-col">
                     <div className="photo">
                       <img alt="berlin" className="img-responsive logo" src={photoURL+upload.filename}/>
@@ -49,7 +49,7 @@ class Gallery extends React.Component {
                           <p className="img-title">{upload.photo_name}</p>
                         </div>
                         <div className="col-xs-6 text-right">
-                          <p className="owner">By Jake Newton</p>
+                          <p className="owner">By {upload.fullName}</p>
                         </div>
                       </div>
                     </div>

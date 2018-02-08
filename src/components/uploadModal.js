@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import UploadForm from './uploadForm';
+import { uploadPhoto } from '../actions/uploadActions';
 
 class UploadModal extends React.Component {
   constructor(props){
@@ -11,6 +12,7 @@ class UploadModal extends React.Component {
   }
 
   render() {
+    const { uploadPhoto } = this.props;
     return (
       <div>
         <div className={classnames("alert", "alert-success", "alert-dismissible") } role="alert">
@@ -24,7 +26,7 @@ class UploadModal extends React.Component {
             <div className="modal-content">
               <div className="modal-body text-center">
                 <p><FontAwesome name='cloud-upload' /> UPLOAD PHOTO</p>
-                <UploadForm />
+                <UploadForm uploadPhoto={uploadPhoto}/>
               </div>
             </div>
           </div>
@@ -34,4 +36,8 @@ class UploadModal extends React.Component {
   }
 }
 
-export default connect(null)(UploadModal);
+UploadModal.propTypes = {
+  uploadPhoto: PropTypes.func.isRequired
+}
+
+export default connect(null, { uploadPhoto })(UploadModal);
